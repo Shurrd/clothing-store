@@ -1,4 +1,4 @@
-import 'package:clothing_store/screens/auth/login_or_signup.dart';
+import 'package:clothing_store/screens/auth/login_or_signup_screen.dart';
 import 'package:clothing_store/screens/home.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,8 @@
 import 'package:clothing_store/components/my_button.dart';
 import 'package:clothing_store/components/my_outline_button.dart';
+import 'package:clothing_store/core/assets/app_images.dart';
+import 'package:clothing_store/screens/auth/login_screen.dart';
+import 'package:clothing_store/screens/auth/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginOrSignup extends StatelessWidget {
@@ -15,7 +18,7 @@ class LoginOrSignup extends StatelessWidget {
               SizedBox(
                 height: constraints.maxHeight * 0.7,
                 child: Image.asset(
-                  "assets/images/auth/auth_image.png",
+                  AppImages.logo,
                   fit: BoxFit.cover,
                   width: double.infinity,
                 ),
@@ -45,9 +48,25 @@ class LoginOrSignup extends StatelessWidget {
                         style: TextStyle(fontSize: 18),
                       ),
                       const SizedBox(height: 14),
-                      MyButton(onPressed: () {}, text: "Login"),
+                      MyButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        LoginScreen()));
+                          },
+                          text: "Login"),
                       const SizedBox(height: 12),
-                      MyOutlineButton(onPressed: () {}, text: "Signup"),
+                      MyOutlineButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        SignupScreen()));
+                          },
+                          text: "Signup"),
                     ],
                   ),
                 ),
