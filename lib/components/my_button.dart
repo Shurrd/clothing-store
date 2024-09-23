@@ -4,13 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 class MyButton extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
-  final String? svgIcon;
+  final String? socialIcon;
 
   const MyButton({
     super.key,
     required this.onPressed,
     required this.text,
-    this.svgIcon,
+    this.socialIcon,
   });
 
   @override
@@ -30,11 +30,11 @@ class MyButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (svgIcon != null)
+            if (socialIcon != null)
               Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: SvgPicture.asset(
-                  svgIcon!,
+                  socialIcon!,
                   width: 20,
                   height: 20,
                   colorFilter:

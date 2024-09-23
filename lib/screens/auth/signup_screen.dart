@@ -28,19 +28,19 @@ class SignupScreen extends StatelessWidget {
               MyButton(
                 onPressed: () {},
                 text: "Apple",
-                svgIcon: AppIcons.apple,
+                socialIcon: AppIcons.apple,
               ),
               const SizedBox(height: 16),
               MyOutlineButton(
                 onPressed: () {},
                 text: "Google",
-                svgIcon: AppIcons.google,
+                socialIcon: AppIcons.google,
               ),
               const SizedBox(height: 16),
               MyOutlineButton(
                 onPressed: () {},
                 text: "Facebook",
-                svgIcon: AppIcons.facebook,
+                socialIcon: AppIcons.facebook,
               ),
               const SizedBox(height: 16),
               const Row(
@@ -66,7 +66,7 @@ class SignupScreen extends StatelessWidget {
               MyOutlineButton(
                 onPressed: () {},
                 text: "Email",
-                svgIcon: AppIcons.email,
+                socialIcon: AppIcons.email,
               ),
             ],
           ),

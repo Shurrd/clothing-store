@@ -1,5 +1,6 @@
 import 'package:clothing_store/screens/auth/login_or_signup_screen.dart';
 import 'package:clothing_store/screens/home.dart';
+import 'package:clothing_store/screens/splash/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginOrSignup(),
+      home: Splash(),
     );
   }
 }
