@@ -2,6 +2,7 @@ import 'package:clothing_store/components/basic_app_bar.dart';
 import 'package:clothing_store/components/my_button.dart';
 import 'package:clothing_store/components/my_outline_button.dart';
 import 'package:clothing_store/core/assets/app_icons.dart';
+import 'package:clothing_store/screens/auth/email/email_signup.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -64,7 +65,12 @@ class SignupScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               MyOutlineButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => EmailSignup()));
+                },
                 text: "Email",
                 socialIcon: AppIcons.email,
               ),

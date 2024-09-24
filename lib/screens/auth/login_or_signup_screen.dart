@@ -33,21 +33,21 @@ class LoginOrSignup extends StatelessWidget {
                     ),
                   ),
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                   width: double.infinity,
                   child: Column(
                     children: [
                       const Text(
                         "You are not logged in.",
                         style: TextStyle(
-                            fontSize: 28, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(height: 14),
+                      const SizedBox(height: 8),
                       const Text(
                         "Login or Signup to access your profile.",
                         style: TextStyle(fontSize: 18),
                       ),
-                      const SizedBox(height: 14),
+                      const SizedBox(height: 8),
                       MyButton(
                           onPressed: () {
                             Navigator.push(
