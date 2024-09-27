@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class ArrowButton extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
+  final bool spaceBetween;
+  final bool isDisabled;
 
   const ArrowButton({
     super.key,
     required this.onPressed,
     required this.text,
+    this.spaceBetween = true,
+    this.isDisabled = false,
   });
 
   @override
@@ -15,10 +19,12 @@ class ArrowButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: isDisabled ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFFF84948),
-          foregroundColor: Colors.white,
+          backgroundColor: isDisabled ? Colors.grey : const Color(0xFFF84948),
+          foregroundColor: isDisabled ? Colors.grey[600] : Colors.white,
+          disabledBackgroundColor: Colors.grey[300],
+          disabledForegroundColor: Colors.grey[600],
           padding: const EdgeInsets.symmetric(vertical: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -27,10 +33,15 @@ class ArrowButton extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: spaceBetween
+                ? MainAxisAlignment.spaceBetween
+                : MainAxisAlignment.center,
             children: [
               Text(text),
-              Icon(Icons.arrow_forward_sharp),
+              SizedBox(
+                width: spaceBetween ? 0 : 10,
+              ),
+              const Icon(Icons.arrow_forward_sharp),
             ],
           ),
         ),

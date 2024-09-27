@@ -5,12 +5,14 @@ class MyButton extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
   final String? socialIcon;
+  final bool isDisabled;
 
   const MyButton({
     super.key,
     required this.onPressed,
     required this.text,
     this.socialIcon,
+    this.isDisabled = false,
   });
 
   @override
@@ -18,10 +20,12 @@ class MyButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: isDisabled ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFFF84948),
+          backgroundColor: isDisabled ? Colors.grey : const Color(0xFFF84948),
           foregroundColor: Colors.white,
+          disabledBackgroundColor: Colors.grey[300],
+          disabledForegroundColor: Colors.grey[600],
           padding: const EdgeInsets.symmetric(vertical: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -37,8 +41,10 @@ class MyButton extends StatelessWidget {
                   socialIcon!,
                   width: 20,
                   height: 20,
-                  colorFilter:
-                      const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  colorFilter: ColorFilter.mode(
+                    isDisabled ? Colors.grey[600]! : Colors.white,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             Text(text),
